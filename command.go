@@ -52,6 +52,11 @@ func (o *Command) addArg(a *arg) error {
 	}
 	a.parent = o
 
+	// Ensure Options pointer is not nil; use default options if none provided
+	if a.opts == nil {
+		a.opts = &Options{}
+	}
+
 	if a.GetPositional() {
 		switch a.argType { // Secondary guard
 		case Flag, FlagCounter, StringList, IntList, FloatList, FileList:
