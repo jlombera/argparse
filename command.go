@@ -54,7 +54,8 @@ func (o *Command) addArg(a *arg) error {
 
 	// Ensure Options pointer is not nil; use default options if none provided
 	if a.opts == nil {
-		a.opts = &Options{}
+		opts := DefaultArgOptions
+		a.opts = &opts
 	}
 
 	if a.GetPositional() {

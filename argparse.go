@@ -117,6 +117,9 @@ type Options struct {
 	positional bool
 }
 
+// Default argument options to use when user does not specify them.
+var DefaultArgOptions = Options{}
+
 // NewParser creates new Parser object that will allow to add arguments for parsing
 // It takes program name and description which will be used as part of Usage output
 // Returns pointer to Parser object
